@@ -21,5 +21,3 @@ if __name__ == '__main__':
     a = Interval(3,4)
     b = Interval(1,5)
 
-    print(Interval(3,4))
-
