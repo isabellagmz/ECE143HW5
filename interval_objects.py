@@ -63,7 +63,10 @@ class Interval(object):
 
         # check if self < other or self > other (do not overlap)
         if self.__lt__(other) or self.__gt__(other):
-            return self, other
+            interval_list = []
+            interval_list.append(self)
+            interval_list.append(other)
+            return interval_list
 
         # check if self <= other (do overlap)
         if self.__le__(other):

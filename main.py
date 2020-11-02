@@ -18,6 +18,7 @@ if __name__ == '__main__':
     start = 'A'
     # print(get_average_word_length(words))
 
-    a = Interval(3,4)
-    b = Interval(1,5)
+    a = Interval(-4,6)
+    b = Interval(-2,-1)
 
+    print(a+b)
