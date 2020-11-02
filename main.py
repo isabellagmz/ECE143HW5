@@ -1,11 +1,7 @@
 # Isabella Gomez A15305555
 # ECE143 HW5
 
-from word_processing import get_average_word_length
-from word_processing import get_longest_word
-from word_processing import get_longest_words_startswith
-from word_processing import get_most_common_start
-from word_processing import get_most_common_end
+from interval_objects import Interval
 from urllib.request import urlopen
 
 class Homework5:
@@ -21,8 +17,9 @@ if __name__ == '__main__':
     words = [i.strip().decode('utf8') for i in response.readlines()]
     start = 'A'
     # print(get_average_word_length(words))
-    # print(get_longest_word(words))
-    # print(get_longest_words_startswith(words, start))
-    # print(get_most_common_start(words))
-    print(get_most_common_end(words))
+
+    a = Interval(3,4)
+    b = Interval(1,5)
+
+    print(Interval(3,4))
 
