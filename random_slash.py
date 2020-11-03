@@ -4,7 +4,7 @@
 import numpy as np
 import random
 
-def gen_rand_slash(m=6,n=6,direction='back'):
+def gen_rand_slash(m=6,n=6,direction='forward'):
     '''
     This function takes in a size for a canvas and a direction for a slash that
     will be randomly generated. The slash must have at least 2 non-zero pixels
@@ -28,23 +28,30 @@ def gen_rand_slash(m=6,n=6,direction='back'):
 
     # get a random number between 0 and 4 when back
     if direction == 'back':
-        random_index = random.randint(0, 4)
-        # put a 1 where the random number was generated
+        random_column = random.randint(0, 4)
+        random_start_row = random.randint(0, 4)
+        random_end_row = random.randint(random_start_row+1, 5)
+        # put a 1 where the random column was generated
         for row in range(6):
-            ran_gen_array[row][random_index] = 1
-            if random_index != 5:
-                random_index = random_index + 1
+            ran_gen_array[random_start_row][random_column] = 1
+            # move the ones from row_start to row_end
+            if random_column != 5 and random_start_row != random_end_row:
+                random_column = random_column + 1
+                random_start_row = random_start_row + 1
             else:
                 break
 
     # get a random number between 1 and 5 when forward
     elif direction == 'forward':
-        random_index = random.randint(1, 5)
+        random_column = random.randint(1, 5)
+        random_start_row = random.randint(0, 4)
+        random_end_row = random.randint(random_start_row + 1, 5)
         # put a 1 where the random number was generated
         for row in range(6):
-            ran_gen_array[row][random_index] = 1
-            if random_index != 0:
-                random_index = random_index - 1
+            ran_gen_array[random_start_row][random_column] = 1
+            if random_column != 0 and random_start_row != random_end_row:
+                random_column = random_column - 1
+                random_start_row = random_start_row + 1
             else:
                 break
 
