@@ -6,5 +6,5 @@ In this repo are:
 
 - main.py
 - word_processing.py (done)
-- random_slash.py
-- interval_objects.py
+- random_slash.py (undone)
+- interval_objects.py (done)
