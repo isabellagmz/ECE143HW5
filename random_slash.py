@@ -4,7 +4,7 @@
 import numpy as np
 import random
 
-def gen_rand_slash(m=6,n=6,direction='forward'):
+def gen_rand_slash(m=6,n=6,direction='back'):
     '''
     This function takes in a size for a canvas and a direction for a slash that
     will be randomly generated. The slash must have at least 2 non-zero pixels
