@@ -28,26 +28,26 @@ def gen_rand_slash(m=6,n=6,direction='back'):
 
     # get a random number between 0 and 4 when back
     if direction == 'back':
-        random_column = random.randint(0, 4)
-        random_start_row = random.randint(0, 4)
-        random_end_row = random.randint(random_start_row+1, 5)
+        random_column = random.randint(0, n-2)
+        random_start_row = random.randint(0, m-2)
+        random_end_row = random.randint(random_start_row+1, m-1)
         # put a 1 where the random column was generated
-        for row in range(6):
+        for row in range(n):
             ran_gen_array[random_start_row][random_column] = 1
             # move the ones from row_start to row_end
-            if random_column != 5 and random_start_row != random_end_row:
+            if random_column != n-1 and random_start_row != random_end_row:
                 random_column = random_column + 1
                 random_start_row = random_start_row + 1
             else:
                 break
 
-    #get a random number between 1 and 5 when forward
+    # get a random number between 1 and 5 when forward
     elif direction == 'forward':
-        random_column = random.randint(1, 5)
-        random_start_row = random.randint(0, 4)
-        random_end_row = random.randint(random_start_row + 1, 5)
+        random_column = random.randint(1, n-1)
+        random_start_row = random.randint(0, m-2)
+        random_end_row = random.randint(random_start_row + 1, m-1)
         # put a 1 where the random number was generated
-        for row in range(6):
+        for row in range(n):
             ran_gen_array[random_start_row][random_column] = 1
             if random_column != 0 and random_start_row != random_end_row:
                 random_column = random_column - 1
