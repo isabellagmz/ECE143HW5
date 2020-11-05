@@ -41,7 +41,7 @@ def gen_rand_slash(m=6,n=6,direction='back'):
             else:
                 break
 
-    # get a random number between 1 and 5 when forward
+    # get a random number between 1 and 5 when direction is forward
     elif direction == 'forward':
         random_column = random.randint(1, n-1)
         random_start_row = random.randint(0, m-2)
